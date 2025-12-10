@@ -9,50 +9,76 @@
 		<a-scene embedded arjs>
 			<a-marker type="pattern" url="https://https://github.com/29fielpo/AR-test/raw/refs/heads/main/QR.patt">
 			<!-- create your AR content here -->
-      
-			<a-box
-			color="Grey"
-			height="1"
-			width="1"
-			depth="1"
-			position="0.75 3 1"
-			rotation="0 0 45">
-			</a-box>
-			
-			<a-box
-			color="Orange"
-			height="1"
-			width="1"
-			depth="1"
-			position="-0.75 3 1"
-			rotation="0 0 45">
-			</a-box>
-			
-			<a-box
-			color="Red"
-			height="1"
-			width="1"
-			depth="1"
-			position="0 1.5 0"
-			rotation="0 0 45">
-			</a-box>
-			
-			<a-cylinder
-			color="Yellow"
-			height="1"
-			radius="0.25"
-			position="0 2.5 0"
-			rotation="-90 0 -1">
-			</a-cylinder>
-			
-			<a-cone
-			color="Black"
-			radius-bottom="0.75"
-			radius-top="0.05"
-			position="0 3 0"
-			rotation="-90 0 -2">
-			</a-cone>	
-			</a-marker>
+            
+        <a-torus 
+            color="grey" 
+            position="0 1 -5"
+            arc="360" 
+            radius="1.75" 
+            radius-tubular="0.1"
+            rotation="-90 0 0"
+            animation="
+                property: rotation;
+                from: -90 0 0;
+                to: 360 360 360;
+                dur: 2000;
+                easing: linear;
+                loop: true;
+                dir: alternate;
+            "
+            
+            animation__2="
+                property: position;
+                from: 0 0.5 -5;
+                to: 0 2.5 -5;
+                dur: 500;
+                dir: alternate;
+                loop: true;
+            "
+            
+        ></a-torus>
+
+        
+        <a-dodecahedron
+            position="0 1 -5"
+            radius="1.5"
+            animation="
+                property: rotation;
+                from: 0 0 0;
+                to: 0 360 0;
+                dur: 2000;
+                easing: linear;
+                loop: true;
+            "
+            animation__2="
+                property: position;
+                from: 0 0.5 -5;
+                to: 0 2.5 -5;
+                dur: 500;
+                dir: alternate;
+                loop: true;
+            "
+            color="orange">
+        </a-dodecahedron>
+        
+        <a-text 
+        value="Welcome to the expo :P" 
+        position="0 5 -5" 
+        geometry="primitive:plane"
+        color="black"
+        ></a-text>
+        
+        <a-text 
+        position="2 4.5 -5" 
+        geometry="primitive:plane"
+        ></a-text>
+        
+        <a-text 
+        position="-2 4.75 -5" 
+        geometry="primitive:plane"
+        ></a-text>
+
+		</a-marker>
 			
 			<!-- define a camera which will move according to the marker position -->
 			<a-entity camera></a-entity>
